@@ -1,0 +1,39 @@
+<div class="position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/461940/pexels-photo-461940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2))">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1683758933/bsruv2qxr7kvxs6vzhir.jpg)">
+    <h1><%= @list.name %></h1>
+  </div>
+  <span class="movie-tag"><%= pluralize(@list.movies.size, "movie") %></span>
+</div>
+<div class="container mb-5">
+  <div class="d-flex justify-content-between my-4">
+    <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't saved any movies yet!" if @list.movies.empty? %></em></small></span>
+    <div>
+      <%= link_to 'Home', lists_path, class: "m-3 btn btn-flat" %>
+       <%= link_to 'Add Bookmark', new_list_bookmark_path(@list), class: "m-3 btn btn-flat" %>
+      <%= link_to "Delete this list", list_path(@list), class: "m-3 btn btn-flat", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+    </div>
+  </div>
+  <div class="row my-2">
+    <% @list.movies.each do |movie| %>
+      <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="bg-white rounded shadow h-100">
+          <%= image_tag movie.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
+          <div class="p-3 rounded-bottom d-flex flex-column">
+            <strong><%= movie.title %> <span class="text-muted font-weight-normal"> • <i class="fas fa-star star-yellow"></i> <%= movie.rating %> </span></strong>
+            <small class="text-muted"><%= movie.overview %></small>
+            <div class="d-flex align-items-end justify-content-between pt-4">
+              <div>
+                <i class="fas fa-quote-left me-2"></i><small class="flex-grow-1"><%= bookmark.comment %></small>
+              </div>
+              <small class="text-right flex-shrink-0"><%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'btn btn-danger text-white' %></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <hr class="my-5">
+
+</div>
+  <%= render "bookmarks/modal"%>
