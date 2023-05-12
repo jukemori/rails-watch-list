@@ -9,7 +9,10 @@ require 'open-uri'
 require 'json'
 
 puts "Cleaning up database..."
+Bookmark.destroy_all
+List.destroy_all
 Movie.destroy_all
+
 puts "Database cleaned"
 
 url = "https://api.themoviedb.org/3/movie/popular?api_key=344f0f780755bea2b31e065cd88c6cc0&language=en-US"
