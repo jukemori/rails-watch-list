@@ -12,10 +12,10 @@ puts "Cleaning up database..."
 Movie.destroy_all
 puts "Database cleaned"
 
-url = "http://tmdb.lewagon.com/movie/top_rated"
+url = "https://api.themoviedb.org/3/movie/popular?api_key=344f0f780755bea2b31e065cd88c6cc0&language=en-US"
 10.times do |i|
   puts "Importing movies from page #{i + 1}"
-  movies = JSON.parse(URI.open("#{url}?page=#{i + 1}").read)['results']
+  movies = JSON.parse(URI.open("#{url}&page=#{i + 1}").read)['results']
   movies.each do |movie|
     puts "Creating #{movie['title']}"
     base_poster_url = "https://image.tmdb.org/t/p/original"
