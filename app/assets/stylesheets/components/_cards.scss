@@ -16,3 +16,9 @@
   height: 50vh;
   max-height: 400px;
 }
+.co-12 :hover {
+  /*customizable*/
+  transition: 0.2s ease-out;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
