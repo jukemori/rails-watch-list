@@ -1,12 +1,13 @@
 <div class="navbar-vanilla">
     <a class="navbar-vanilla-section" href="https://www.instagram.com/p/CjWVC7KKGED/" target="_blank">
       <img class="navbar-vanilla-logo" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1683758933/bsruv2qxr7kvxs6vzhir.jpg" alt="logo">
-      <h2 class="navbar-vanilla-brand" >Movie List</h2>
+      <h2 class="navbar-vanilla-brand">My Lists</h2>
     </a>
+
     <div class="navbar-vanilla-section">
-      <div class="navbar-vanilla-menu">
-        <a href="https://www.instagram.com/p/CjWVC7KKGED/" target="_blank">Movie</a>
-        <a href="https://www.instagram.com/p/CjWVC7KKGED/" target="_blank">List</a>
+      <div class="navbar-vanilla-menu d-flex flex-row" >
+        <h3><%= link_to 'Home', root_path%></h3>
+        <h3><%= link_to 'My Watchlists', lists_path%></h3>
       </div>
       <div class="navbar-vanilla-profile">
         <img src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1683758933/bsruv2qxr7kvxs6vzhir.jpg" alt="">
