@@ -1,23 +1,20 @@
-<div class="cover mb-4 d-flex align-items-center justify-content-center" >
-  <div class="text-center text-white" >
-    <h1 class="pl-20">Movie Watchlists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80);">
+  <div class="container">
+    <h1>Make your own movie watchlist!</h1>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat mt-3" %>
   </div>
 </div>
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">My Watchlists</h3>
-    <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
-  </div>
-  <div class="row">
-    <% @lists.each do |list| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
-        <%= link_to list_path(list), class:"text-decoration-none" do %>
-          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1683758933/bsruv2qxr7kvxs6vzhir.jpg"%>)">
-            <%= list.name %>
-          </div>
-        <% end %>
+
+
+  <h2>Movie Watchlists</h2>
+  <ul class="cards">
+  <% @lists.each do |list| %>
+      <%= link_to list_path(list), class:"text-decoration-none" do %>
+    <li class="card" >
+      <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1683758933/bsruv2qxr7kvxs6vzhir.jpg"%>)">
+        <h3 class="card-title"><%= list.name %></h3>
       </div>
-    <% end %>
-  </div>
-</div>
-  <%= render "bookmarks/modal"%>
+      <% end %>
+    </li><% end %>
+  </ul>
+  <%= render "shared/footer"%>
