@@ -25,7 +25,7 @@ url = "https://api.themoviedb.org/3/movie/popular?api_key=344f0f780755bea2b31e06
     Movie.create(
       title: movie['title'],
       overview: movie['overview'],
-      poster_url: "#{base_poster_url}#{movie['backdrop_path']}",
+      poster_url: "#{base_poster_url}#{movie['poster_path']}",
       rating: movie['vote_average']
     )
   end
