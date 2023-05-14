@@ -21,5 +21,14 @@
         <% end %>
       </div>
     </li><% end %>
+      <li class="card">
+        <div class="card-category" style="background-color: dark">
+        <div class="add-button" >
+          <%= link_to new_list_path do%>
+            <i class="fa-solid fa-circle-plus fa-2xl" style="color: white;"></i>
+          <% end %>
+        </div>
+        </div>
+      </li>
   </ul>
   <%= render "shared/footer"%>

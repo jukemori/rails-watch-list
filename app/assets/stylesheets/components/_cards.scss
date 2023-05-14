@@ -28,8 +28,19 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
   scroll-snap-align: start;
   transition: all 0.2s;
-  background-color: black;
+  background-color:  rgba(104, 103, 103, 0.3);
 }
+
+.card-title {
+  font-weight: bold;
+  border-color: black;
+}
+
+.card:hover .add-button {
+  opacity: 0.15;
+}
+
+
 
 .card:hover .delete-button {
   display: block;
@@ -42,7 +53,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,6 +107,7 @@
   .card:not(:last-child) {
     margin-right: 20px;
   }
+
 }
 
 @media (min-width: 700px) {
@@ -131,6 +143,11 @@
   height: 100%;
 }
 
+
+.card-show-new:hover {
+  opacity: 0.70;
+}
+
 .card-show:hover .delete-button {
   display: block;
 }
@@ -157,7 +174,7 @@
 
 
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+@media (min-width: 100px) and (max-width: 370px) {
   .cards-show {
     grid-template-columns: 1fr 1fr;
   }
