@@ -12,7 +12,7 @@
             <small class="text-muted"><%= movie.overview %></small>
             <div class="d-flex align-items-end justify-content-between pt-4">
               <div>
-                <i class="fa-solid fa-comment" style="color: black"></i></i><small class="flex-grow-1">  <%= bookmark.comment %></small>
+                <i class="fa-solid fa-quote-left" style="color: black"></i></i><small class="flex-grow-1">  <%= bookmark.comment %></small>
               </div>
 
             </div>
@@ -24,6 +24,7 @@
   <hr class="my-5">
 <%
 =end%>
+<i class="fa-solid fa-quote-left"></i>
 
 
 
@@ -46,6 +47,11 @@
               <div class="p-3 rounded-bottom d-flex flex-column">
               <strong><span class="text-muted font-weight-normal"> <i class="fas fa-star star-yellow"></i> <%= movie.rating %> </span></strong>
               <strong><%= movie.title %> </strong>
+              <div class="d-flex align-items-end justify-content-between pt-4">
+              <div>
+                <i class="fa-solid fa-quote-left" style="color: white"></i> <small class="flex-grow-1 text-muted">  <%= bookmark.comment %></small>
+              </div>
+            </div>
               </div>
                 <div class="delete-button">
                   <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this movie?" }, class: 'text-right flex-shrink-0' do %>
@@ -57,15 +63,5 @@
       </div>
   </div>
   </div>
-     <div class="footer" style="height: 100vh;" >
-      <div class="footer-links">
-        <a href="https://www.instagram.com/p/CjWVC7KKGED/" target="_blank"><i class="fab fa-github" ></i></a>
-        <a href="https://www.instagram.com/p/CjWVC7KKGED/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.instagram.com/p/CjWVC7KKGED/" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/p/CjWVC7KKGED/" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/p/CjWVC7KKGED/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <div class="footer-copyright">
-        This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-      </div>
+    <%= render "shared/footer"%>
 </div>

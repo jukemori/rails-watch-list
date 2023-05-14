@@ -20,6 +20,7 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 0 0 100%;
@@ -29,6 +30,13 @@
   transition: all 0.2s;
   background-color: black;
 }
+
+.card:hover .delete-button {
+  display: block;
+}
+
+
+
 
 
 .card-category {
@@ -138,6 +146,12 @@
   top: 5px;
   right: 5px;
   display: none;
+}
+
+.delete-button:hover {
+  transition: 0.2s ease-out;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 
