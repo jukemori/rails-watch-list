@@ -7,7 +7,7 @@
         <%= simple_form_for @bookmark, url: list_bookmarks_path(@list) do |f| %>
           <%= f.input :comment, placeholder: 'Leave a comment' %>
           <%= f.association :movie, prompt: "Select a movie", input_html: {data: { controller: "tom-select"}} %>
-          <%= f.submit class: "btn btn-flat" %>
+          <%= f.submit 'Add movie', class: "btn btn-flat" %>
         <% end %>
       </div>
     </div>

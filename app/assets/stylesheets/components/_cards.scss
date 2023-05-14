@@ -92,7 +92,7 @@
 }
 
 .cards::-webkit-scrollbar-thumb {
-  background: orange;
+  background: #f5c518;
 }
 
 .cards::-webkit-scrollbar-track {
@@ -170,6 +170,13 @@
   transition: 0.2s ease-out;
   transform: translateY(-8px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.add-button:hover {
+  transition: 0.2s ease-out;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0.15;
 }
 
 
