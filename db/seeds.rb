@@ -16,7 +16,7 @@ Movie.destroy_all
 puts "Database cleaned"
 
 url = "https://api.themoviedb.org/3/movie/popular?api_key=344f0f780755bea2b31e065cd88c6cc0&language=en-US"
-10.times do |i|
+30.times do |i|
   puts "Importing movies from page #{i + 1}"
   movies = JSON.parse(URI.open("#{url}&page=#{i + 1}").read)['results']
   movies.each do |movie|
