@@ -1,14 +1,14 @@
-<div class="container py-5">
-  <%= link_to 'Go Back', lists_path, class: "m-3 btn btn-flat" %>
+<div class="container ">
+  <%= link_to 'Watchlists', lists_path, class: "m-3 btn btn-flat" %>
   <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
+    <div class="col-12 col-md-6 offset-lg-3"  >
       <div class="bg-white rounded p-3 shadow">
-        <h3>Add a movie to your <%= @list.name %> list</h3>
-        <%= simple_form_for @bookmark, url: list_bookmarks_path(@list) do |f| %>
-          <%= f.input :comment, placeholder: 'Leave a comment' %>
-          <%= f.association :movie, prompt: "Select a movie", input_html: {data: { controller: "tom-select"}} %>
-          <%= f.submit 'Add movie', class: "btn btn-flat" %>
+        <% if @list %>
+          <h3>Movie to <%= @list.name %></h3>
+        <% elsif @movie %>
+          <h3><%= @movie.title %> to List</h3>
         <% end %>
+        <%= render 'bookmarks/form' %>
       </div>
     </div>
   </div>

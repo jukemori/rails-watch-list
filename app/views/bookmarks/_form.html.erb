@@ -1,0 +1,13 @@
+<% if @list %>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment, placeholder: 'Leave a comment' %>
+    <%= f.association :movie, collection: Movie.where.not(id: @list.movies).order(:title), include_blank: false, input_html: { class: 'select2' } %>
+    <%= f.submit 'Add', class: 'btn btn-flat' %>
+  <% end %>
+<% elsif @movie %>
+  <%= simple_form_for [@movie, @bookmark], url: movie_bookmarks_path(@movie) do |f| %>
+    <%= f.input :comment, placeholder: 'Leave a comment' %>
+    <%= f.association :list, collection: List.where.not(id: @movie.lists).order(:name), include_blank: false, input_html: { class: 'select2' } %>
+    <%= f.submit 'Add', class: 'btn btn-flat' %>
+  <% end %>
+<% end %>
