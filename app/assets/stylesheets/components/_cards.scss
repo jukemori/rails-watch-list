@@ -53,7 +53,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 30vh;
+  height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,10 +71,10 @@
 }
 
 .card:hover {
-  transition: 0.2s ease-out;
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  transform: scale3d(1.1, 1.1, 1.1);
+  // transition: 0.2s ease-out;
+  // transform: translateY(-8px);
+  // box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  // transform: scale3d(1.1, 1.1, 1.1);
 }
 
 .card .card-title {
@@ -88,45 +88,63 @@
 
 .cards::-webkit-scrollbar-thumb,
 .cards::-webkit-scrollbar-track {
-  border-radius: 92px;
+  border-radius: 4px;
 }
 
 .cards::-webkit-scrollbar-thumb {
-  background: #f5c518;
+  background: rgba(104, 103, 103, 0.3);
 }
 
 .cards::-webkit-scrollbar-track {
-  background: white;
+  background: black;
 }
 
-@media (min-width: 500px) {
+
+@media (min-width: 100px) and (max-width: 575px) {
   .card {
     flex-basis: calc(50% - 10px);
   }
 
   .card:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 1rem;
+  }
+
+  .card-category {
+
+    height: 15vh;
+
   }
 
 }
 
-@media (min-width: 700px) {
+
+@media (min-width: 576px) {
   .card {
-    flex-basis: calc(calc(100% / 3) - 20px);
+    flex-basis: calc(calc(100% / 2) - 20px);
   }
 
   .card:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-basis: calc(calc(100% / 4) - 20px);
+  }
+
+  .card:not(:last-child) {
+    margin-right: 1rem;
   }
 }
 
 @media (min-width: 1100px) {
   .card {
-    flex-basis: calc(30% - 30px);
+    flex-basis: calc(20% - 30px);
   }
 
   .card:not(:last-child) {
-    margin-right: 40px;
+    margin-right: 1rem;
   }
 }
 
@@ -141,7 +159,7 @@
   background-color: rgba(104, 103, 103, 0.3);
   color: white;
   position: relative;
-
+  font-size: 0.8rem;
 }
 
 
@@ -168,14 +186,12 @@
 }
 
 .delete-button:hover {
-  transition: 0.2s ease-out;
-  transform: translateY(-8px);
+  opacity: 0.15;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .add-button:hover {
-  transition: 0.2s ease-out;
-  transform: translateY(-8px);
+
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   opacity: 0.15;
 }
@@ -184,7 +200,7 @@
 // Smallest device
 @media (min-width: 370px) {
   .cards-show {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
   }
 }
@@ -192,7 +208,7 @@
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards-show {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
   }
 }
@@ -200,7 +216,7 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards-show {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   }
 }
@@ -208,7 +224,7 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards-show {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 1fr;
   }
 }
@@ -216,7 +232,7 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards-show {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 1fr;
   }
 }
