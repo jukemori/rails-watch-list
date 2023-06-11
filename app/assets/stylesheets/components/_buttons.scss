@@ -4,7 +4,14 @@
   border-radius: 0.12em;
   margin:0 0.3em 0.3em 0;
   background: #f5c518;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1, 1.1);
+
+    background: white;
+      color: #f5c518;;
+  }
 }
 
 .btn-cancel {
@@ -12,14 +19,17 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #6a757e;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
 }
 
-.btn-flat {
+.btn-primary {
   color: white;
-  padding: 0.35em 1.2em;
-  border-radius: 0.12em;
-  margin:0 0.3em 0.3em 0;
   background: #f5c518;
-  transition: background 0.3s ease;
+border: none;
+&:hover {
+
+
+  background: white;
+    color: #f5c518;;
+}
 }
