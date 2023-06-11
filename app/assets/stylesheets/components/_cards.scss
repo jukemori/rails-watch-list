@@ -29,6 +29,10 @@
   scroll-snap-align: start;
   transition: all 0.2s;
   background-color:  rgba(104, 103, 103, 0.3);
+  transition: filter 0.3s ease;
+  &:hover{
+    filter: brightness(50%);
+  }
 }
 
 .card-title {
@@ -156,6 +160,13 @@
   color: white;
   position: relative;
   font-size: 0.8rem;
+  transition: filter 0.3s ease;
+  &:hover {
+    transition: 0.2s ease-out;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    filter: brightness(50%);
+  }
 }
 
 
@@ -167,11 +178,7 @@
   display: block;
 }
 
-.card-show:hover {
-  transition: 0.2s ease-out;
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
+
 
 
 .delete-button {

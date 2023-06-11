@@ -11,6 +11,10 @@
   scroll-snap-align: start;
   transition: all 0.2s;
   background-color:  rgba(104, 103, 103, 0.3);
+  transition: filter 0.3s ease;
+  &:hover{
+    filter: brightness(50%);
+  }
 }
 
 .movie-card-category {
