@@ -70,12 +70,7 @@
   margin-right: 10px;
 }
 
-.card:hover {
-  // transition: 0.2s ease-out;
-  // transform: translateY(-8px);
-  // box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  // transform: scale3d(1.1, 1.1, 1.1);
-}
+
 
 .card .card-title {
   font-size: 20px;
@@ -150,9 +145,10 @@
 
 .cards-show {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr;
-  grid-gap: 16px;
+  grid-gap: 1rem;
 }
 
 .card-show {
@@ -217,7 +213,7 @@
 @media (min-width: 768px) {
   .cards-show {
     grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
+    grid-template-rows: 1fr;
   }
 }
 
