@@ -9,5 +9,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @movies = Movie.where.not(id: @movie.id).order(:id).limit(20)
   end
 end
