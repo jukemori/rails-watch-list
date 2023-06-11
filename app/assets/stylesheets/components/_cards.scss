@@ -201,10 +201,9 @@
 
 
 // Smallest device
-@media (min-width: 370px) {
+@media (min-width: 100px) and (max-width: 575px) {
   .cards-show {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
