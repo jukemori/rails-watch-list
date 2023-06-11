@@ -6,4 +6,8 @@ class MoviesController < ApplicationController
       @movies = @movies.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
+
+  def show
+    @movie = Movie.find(params[:id])
+  end
 end

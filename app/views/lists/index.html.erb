@@ -4,30 +4,32 @@
     <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat mt-3" %>
   </div>
 </div>
-<h2>Movie Watchlists</h2>
-<ul class="cards">
-  <% @lists.each do |list| %>
-    <%= link_to list_path(list), class:"text-decoration-none" do %>
-      <li class="card" >
-        <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1683758933/bsruv2qxr7kvxs6vzhir.jpg"%>)">
-          <h3 class="card-title"><%= list.name %></h3>
-        </div>
-      <% end %>
-      <div class="delete-button">
-        <%= link_to list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this movie?" }, class: 'text-right flex-shrink-0' do %>
-          <i class="fa-solid fa-trash-can" style="color: white;"></i>
+<div class="home-container">
+  <h2 style="color: white;">Your Movie Watchlists</h2>
+  <ul class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), class:"text-decoration-none" do %>
+        <li class="card" >
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1683758933/bsruv2qxr7kvxs6vzhir.jpg"%>)">
+            <h3 class="card-title"><%= list.name %></h3>
+          </div>
         <% end %>
+        <div class="delete-button">
+          <%= link_to list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this movie?" }, class: 'text-right flex-shrink-0' do %>
+            <i class="fa-solid fa-trash-can" style="color: white;"></i>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+    <li class="card">
+      <div class="card-category" style="background-color: dark">
+        <div class="add-button" >
+          <%= link_to new_list_path do%>
+            <i class="fa-solid fa-circle-plus fa-2xl" style="color: white;"></i>
+          <% end %>
+        </div>
       </div>
     </li>
-  <% end %>
-  <li class="card">
-    <div class="card-category" style="background-color: dark">
-      <div class="add-button" >
-        <%= link_to new_list_path do%>
-          <i class="fa-solid fa-circle-plus fa-2xl" style="color: white;"></i>
-        <% end %>
-      </div>
-    </div>
-  </li>
-</ul>
-<%= render "movies"%>
+  </ul>
+  <%= render "movies"%>
+</div>

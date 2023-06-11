@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   def index
     @lists = List.all
+    @movies = Movie.order(:id).limit(20)
   end
 
   def show
