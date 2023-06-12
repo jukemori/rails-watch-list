@@ -1,18 +1,10 @@
-<div class="d-flex text-white align-items-center text-center list-title">
-  <h2>Trending Now</h2>
-  <%= link_to 'Explore All>', movies_path, class:"text-decoration-none movies-link"%>
-</div>
-<ul class="cards">
-  <% @movies.each do |movie| %>
-    <%= link_to movie_path(movie), class:"text-decoration-none" do %>
-      <li class="movie-card" >
-        <div class="movie-card-category" data-aos="zoom-in" style="background-image: url(<%= movie.poster_url%>)">
-        </div>
-      <% end %>
-      <div class="bookmark-button">
-        <i class="fa-regular fa-bookmark fa-xl btn" style="color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal<%=movie.id%>"></i>
-      </div>
-    </li>
-    <%= render "bookmarks/modal", movie: movie, bookmark: @bookmark %>
+<%= link_to movie_path(movie), class:"text-decoration-none" do %>
+  <li class="movie-card" >
+    <div class="movie-card-category" data-aos="zoom-in" style="background-image: url(<%= movie.poster_url%>)">
+    </div>
   <% end %>
-</ul>
+  <div class="bookmark-button">
+    <i class="fa-regular fa-bookmark fa-xl btn" style="color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal<%=movie.id%>"></i>
+  </div>
+</li>
+<%= render "bookmarks/modal", movie: movie, bookmark: @bookmark %>
