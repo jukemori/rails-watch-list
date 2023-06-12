@@ -3,9 +3,12 @@ class ListsController < ApplicationController
   def index
     @lists = List.all
     @movies = Movie.order(:id).limit(20)
+    @bookmark = Bookmark.new
+    @list = List.new
   end
 
   def show
+    @bookmark = Bookmark.new
   end
 
   def new
