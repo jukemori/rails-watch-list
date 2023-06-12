@@ -31,6 +31,32 @@
       </div>
     </li>
   </ul>
-  <%= render "movies"%>
+  <div class="d-flex text-white align-items-center text-center list-title">
+    <h2>Now Playing</h2>
+    <%= link_to 'Explore All>', movies_path, class:"text-decoration-none movies-link"%>
+  </div>
+  <ul class="cards">
+    <% @now_playing.each do |movie| %>
+      <%= render "movies", movie: movie%>
+    <% end %>
+  </ul>
+  <div class="d-flex text-white align-items-center text-center list-title">
+    <h2>Top Rated</h2>
+    <%= link_to 'Explore All>', movies_path, class:"text-decoration-none movies-link"%>
+  </div>
+  <ul class="cards">
+    <% @top_rated.each do |movie| %>
+      <%= render "movies", movie: movie%>
+    <% end %>
+  </ul>
+  <div class="d-flex text-white align-items-center text-center list-title">
+    <h2>Upcoming</h2>
+    <%= link_to 'Explore All>', movies_path, class:"text-decoration-none movies-link"%>
+  </div>
+  <ul class="cards">
+    <% @upcoming.each do |movie| %>
+      <%= render "movies", movie: movie%>
+    <% end %>
+  </ul>
   <%= render "modal", list: @list %>
 </div>

@@ -50,4 +50,4 @@ url = "https://api.themoviedb.org/3/movie/popular?api_key=344f0f780755bea2b31e06
     )
   end
 end
-puts "Movies created"
+# puts "Movies created"
