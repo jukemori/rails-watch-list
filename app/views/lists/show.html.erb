@@ -15,7 +15,7 @@
         <div class="card-show">
           <%= link_to movie_path(movie), class:"text-decoration-none" do %>
             <%= image_tag movie.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
-            <div class="p-3 rounded-bottom d-flex flex-column">
+            <div class="p-2 rounded-bottom d-flex flex-column">
               <strong><span class="text-muted font-weight-normal"> <i class="fas fa-star star-yellow"></i> <%= movie.rating %> </span></strong>
               <strong class="text-white"><%= movie.title %> </strong>
               <div class="d-flex align-items-end justify-content-between pt-4">

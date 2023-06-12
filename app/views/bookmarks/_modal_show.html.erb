@@ -1,14 +1,14 @@
-<div class="modal fade text-black" id="exampleModal<%=movie.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Add <%= movie.title %> to movie</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add <%= @movie.title %> to list</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <%= simple_form_for [movie, @bookmark], url: movie_bookmarks_path(movie) do |f| %>
+      <%= simple_form_for [@movie, @bookmark], url: movie_bookmarks_path(@movie) do |f| %>
         <div class="modal-body">
           <%= f.input :comment, placeholder: 'Leave a comment' %>
-          <%= f.association :list, collection: List.where.not(id: movie.lists).order(:name), include_blank: false, input_html: { class: 'select2' } %>
+          <%= f.association :list, collection: List.where.not(id: @movie.lists).order(:name), include_blank: false, input_html: { class: 'select2' } %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

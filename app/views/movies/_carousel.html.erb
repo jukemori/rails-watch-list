@@ -10,10 +10,9 @@
         </div>
       <% end %>
       <div class="bookmark-button">
-        <%= link_to new_movie_bookmark_path(movie) do  %>
-          <i class="fa-regular fa-bookmark fa-xl" style="color: white;"></i>
-        <% end %>
+        <i class="fa-regular fa-bookmark fa-xl btn" style="color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal<%=movie.id%>"></i>
       </div>
     </li>
+    <%= render "bookmarks/modal", movie: movie, bookmark: @bookmark %>
   <% end %>
 </ul>
