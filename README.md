@@ -27,7 +27,6 @@ touch .env
 Inside `.env`, set these variables.
 ```
 CLOUDINARY_URL=your_own_cloudinary_url_key
-MAPBOX_API_KEY=your_own_mapbox_api_key
 ```
 
 ### DB Setup
@@ -49,15 +48,6 @@ rails s
 - [PostgreSQL](https://www.postgresql.org/) - Database
 - [Bootstrap](https://getbootstrap.com/) — Styling
 - [Figma](https://www.figma.com) — Prototyping
-
-## Acknowledgements
-Inspired by Airbnb
-
-## Team Members
-- [Juan Bernal](https://github.com/mesieou)
-- [Rika Saito](https://github.com/arki-s)
-- [Xuemei Huang](https://github.com/meifruit)
-- [Jun Ukemori](https://github.com/jukemori)
 
 
 ## License
