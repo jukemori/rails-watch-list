@@ -57,7 +57,7 @@ def fetch_movies(category)
   url = "https://api.themoviedb.org/3/movie/#{category}?api_key=#{key}&language=en-US&adult=false"
   base_poster_url = "https://image.tmdb.org/t/p/w500"
   movies = []
-  5.times do |i|
+  10.times do |i|
     response = RestClient.get("#{url}&page=#{i + 1}")
     data = JSON.parse(response)
     result = data['results']
