@@ -27,6 +27,7 @@ touch .env
 Inside `.env`, set these variables.
 ```
 CLOUDINARY_URL=your_own_cloudinary_url_key
+ACCESS_TOKEN=your_tmdb_api_access_token
 ```
 
 ### DB Setup
